@@ -1,45 +1,52 @@
 <!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Итоговые отметки</title><style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:sans-serif}body{background:#080d17;color:#f1f5f9;padding-bottom:54px;font-size:12px}
-.hdr,.nav{background:#152036;padding:8px 12px;display:flex;align-items:center;border-bottom:1px solid #283b5e}.hdr{justify-content:space-between}
-.sch,.h-ico,.row{display:flex;align-items:center;gap:8px}.logo{width:30px;height:30px;background:#1d70d6;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none}
-.orb{width:15px;height:15px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#818cf8,#f472b6)}svg{width:16px;height:16px;stroke:#cbd5e1;fill:none;stroke-width:1.7}
-.box{max-width:600px;margin:0 auto;padding:10px}h1{font-size:18px;margin:2px 0 10px}
-.card{background:#141f35;border:1px solid #293d63;border-radius:10px;padding:10px;margin-bottom:10px}
-.fb{width:30px;height:30px;background:#1c2b47;border:1px solid #354e7d;border-radius:7px;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.tag{background:#1c2b47;border:1px solid #354e7d;padding:4px 10px;border-radius:13px;font-size:11px}
-.fp{display:none;gap:5px;margin:8px 0}.fp.open{display:flex}.ch{background:#1c2b47;border:1px solid #354e7d;color:#e2e8f0;padding:3px 9px;border-radius:10px;font-size:11px;cursor:pointer}.ch.act{background:#2563eb}
-.btn{width:100%;padding:8px;border-radius:7px;font-weight:600;cursor:pointer;border:none;margin-top:8px;font-size:12px}.b1{background:#a8c7fa;color:#080d17}.b2{background:#1a2842;border:1px solid #354e7d;color:#e2e8f0}
-.doc{background:#192640;border:1px solid #2d436b;border-radius:8px;padding:10px;transition:.2s}.doc.load{opacity:.35}.rh{text-align:center;font-size:9px;color:#cbd5e1;margin-bottom:6px;text-transform:uppercase}
-.st{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:11px}.ava{width:54px;height:64px;background:#e2e8f0;border-radius:3px;display:flex;align-items:flex-end;justify-content:center;flex-shrink:0}
-.tbl{overflow-x:auto;background:#1e2e4d;border:1px solid #344d7a;border-radius:6px}table{width:100%;border-collapse:collapse;font-size:11px;min-width:400px}
-th,td{border-bottom:1px solid #2c4169;border-right:1px solid #2c4169;padding:4px;text-align:center}th{background:#25385c}td.l{text-align:left;min-width:125px}body.ed td.g{color:#93c5fd;cursor:pointer}
-.mt{font-size:9.5px;color:#94a3b8;margin-top:8px}
-.nav{position:fixed;bottom:0;left:0;right:0;justify-content:space-around;border-top:1px solid #283b5e;border-bottom:none;font-size:9.5px;color:#94a3b8}
-.ni{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer}.ni.act{color:#a8c7fa}.ni.act svg{stroke:#a8c7fa}
-.err{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}.err.open{display:flex}
-.eb{background:#152036;border:1px solid #3b5687;border-radius:12px;padding:16px;max-width:300px;width:100%;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.6)}
+*{box-sizing:border-box;margin:0;padding:0;font-family:sans-serif}body{background:#080d17;color:#f1f5f9;padding-bottom:60px;font-size:13px}
+#pb{position:fixed;top:0;left:0;height:3px;width:0;background:#60a5fa;box-shadow:0 0 8px #3b82f6;z-index:99}
+.hdr,.nav{background:#152036;padding:10px 24px;display:flex;align-items:center;border-bottom:1px solid #283b5e}.hdr{justify-content:space-between}
+.sch,.h-ico,.row{display:flex;align-items:center;gap:10px}.logo{width:34px;height:34px;background:#1d70d6;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none}
+.orb{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#818cf8,#f472b6)}svg{width:18px;height:18px;stroke:#cbd5e1;fill:none;stroke-width:1.7}
+.box{width:100%;padding:16px 24px}h1{font-size:22px;margin:4px 0 14px}
+.card{background:#141f35;border:1px solid #293d63;border-radius:10px;padding:16px;margin-bottom:14px}
+.fb{width:34px;height:34px;background:#1c2b47;border:1px solid #354e7d;border-radius:7px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.tag{background:#1c2b47;border:1px solid #354e7d;padding:5px 12px;border-radius:14px;font-size:12px}
+.fp{display:none;gap:6px;margin:10px 0}.fp.open{display:flex}.ch{background:#1c2b47;border:1px solid #354e7d;color:#e2e8f0;padding:4px 11px;border-radius:10px;font-size:12px;cursor:pointer}.ch.act{background:#2563eb}
+.btns{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.btn{flex:1;min-width:180px;padding:9px 16px;border-radius:7px;font-weight:600;cursor:pointer;border:none;font-size:13px}.b1{background:#a8c7fa;color:#080d17}.b1:disabled{opacity:.65;cursor:wait}.b2{background:#1a2842;border:1px solid #354e7d;color:#e2e8f0}
+.doc{background:#192640;border:1px solid #2d436b;border-radius:8px;padding:18px;transition:.25s}.doc.load{opacity:.35}.rh{text-align:center;font-size:11px;color:#cbd5e1;margin-bottom:8px;text-transform:uppercase}
+.st{display:flex;align-items:center;gap:14px;margin:12px 0;font-size:12.5px;line-height:1.5}.ava{width:64px;height:74px;background:#e2e8f0;border-radius:4px;display:flex;align-items:flex-end;justify-content:center;flex-shrink:0}
+.tbl{overflow-x:auto;background:#1e2e4d;border:1px solid #344d7a;border-radius:6px}table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{border-bottom:1px solid #2c4169;border-right:1px solid #2c4169;padding:7px 8px;text-align:center}th{background:#25385c}td.l{text-align:left;min-width:220px}body.ed td.g{color:#93c5fd;cursor:pointer}
+.mt{font-size:11px;color:#94a3b8;margin-top:10px}
+.nav{position:fixed;bottom:0;left:0;right:0;justify-content:space-around;border-top:1px solid #283b5e;border-bottom:none;font-size:11px;color:#94a3b8;z-index:20}
+.ni{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;user-select:none}.ni.act{color:#a8c7fa}.ni.act svg{stroke:#a8c7fa}
+#tst{position:fixed;bottom:68px;left:50%;transform:translateX(-50%) translateY(15px);background:#18243c;border:1px solid #354e7d;color:#cbd5e1;padding:9px 18px;border-radius:8px;font-size:12px;opacity:0;pointer-events:none;transition:.2s;box-shadow:0 6px 20px rgba(0,0,0,.6);white-space:nowrap;z-index:40}
+#tst.show{opacity:1;transform:translateX(-50%) translateY(0)}
 </style></head><body>
-<div class="hdr"><div class="sch"><div class="logo" onclick="tap()"><svg style="fill:#fff;stroke:none" viewBox="0 0 24 24"><path d="M12 2L2 7v2h20V7L12 2zm-7 9v7H3v2h18v-2h-2v-7h-2v7h-4v-7h-2v7H7v-7H5z"/></svg></div><div><b>МАОУ СОШ №31</b><div style="font-size:10px;color:#94a3b8">2026/2027 уч.год</div></div></div><div class="h-ico"><div class="orb"></div><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div></div>
+<div id="pb"></div>
+<div class="hdr"><div class="sch"><div class="logo" onclick="tap()"><svg style="fill:#fff;stroke:none" viewBox="0 0 24 24"><path d="M12 2L2 7v2h20V7L12 2zm-7 9v7H3v2h18v-2h-2v-7h-2v7h-4v-7h-2v7H7v-7H5z"/></svg></div><div><b>МАОУ СОШ №31</b><div style="font-size:11px;color:#94a3b8">2026/2027 уч.год</div></div></div><div class="h-ico"><div class="orb" onclick="nav()"></div><svg onclick="nav()" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg><svg onclick="nav()" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div></div>
 <div class="box">
-<div style="font-size:11px;color:#94a3b8">Отчеты</div><h1>Итоговые отметки</h1>
+<div style="font-size:12px;color:#94a3b8">Отчеты</div><h1>Итоговые отметки</h1>
 <div class="card"><div class="row"><button class="fb" onclick="document.getElementById('fp').classList.toggle('open')"><svg style="stroke:#93c5fd" viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button><span class="tag">Бурлаков Илья</span><span class="tag">8г</span></div>
 <div class="fp" id="fp"><button class="ch act" onclick="flt('all',this)">Все</button><button class="ch" onclick="flt('5',this)">5</button><button class="ch" onclick="flt('4',this)">4</button><button class="ch" onclick="flt('3',this)">3</button><button class="ch" onclick="flt('зач',this)">зач</button></div>
-<button class="btn b1" id="gen" onclick="build()">↻ Сформировать</button><button class="btn b2" onclick="window.print()">📄 Сформировать PDF</button></div>
-<div class="card"><div class="doc" id="doc"><div class="rh">МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ "СРЕДНЯЯ ОБЩЕОБРАЗОВАТЕЛЬНАЯ ШКОЛА №31 ИМЕНИ ГЕРОЯ СОВЕТСКОГО СОЮЗА П.Т. ХАРИТОНОВА" Г. УЛАН-УДЭ</div><div style="text-align:center;font-weight:600">Итоговые отметки</div>
-<div class="st"><div class="ava"><svg style="width:44px;height:44px;fill:#94a3b8;stroke:none" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg></div><div>Учебный год: 2026/2027<br>Класс: 8г<br>Ученик: Бурлаков Илья Алексеевич</div></div>
-<div class="tbl"><table><thead><tr><th rowspan="2">№</th><th rowspan="2">Предмет</th><th colspan="4">Учебные периоды</th><th rowspan="2">Год.</th><th rowspan="2">Экз.</th><th rowspan="2">Итог.</th></tr><tr><th>1 четв.</th><th>2 четв.</th><th>3 четв.</th><th>4 четв.</th></tr></thead><tbody id="tb"></tbody></table></div>
+<div class="btns"><button class="btn b1" id="gen" onclick="build()">↻ Сформировать</button><button class="btn b2" onclick="window.print()">📄 Сформировать PDF</button></div></div>
+<div class="card"><div class="doc" id="doc"><div class="rh">МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ "СРЕДНЯЯ ОБЩЕОБРАЗОВАТЕЛЬНАЯ ШКОЛА №31 ИМЕНИ ГЕРОЯ СОВЕТСКОГО СОЮЗА П.Т. ХАРИТОНОВА" Г. УЛАН-УДЭ</div><div style="text-align:center;font-weight:600;font-size:15px">Итоговые отметки</div>
+<div class="st"><div class="ava"><svg style="width:50px;height:50px;fill:#94a3b8;stroke:none" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg></div><div>Учебный год: 2026/2027<br>Класс: 8г<br>Ученик: Бурлаков Илья Алексеевич</div></div>
+<div class="tbl"><table><thead><tr><th rowspan="2">№</th><th rowspan="2">Предмет</th><th colspan="4">Учебные периоды</th><th rowspan="2">Год. оценка</th><th rowspan="2">Экз. оценка</th><th rowspan="2">Итог. оценка</th></tr><tr><th>1 четверть</th><th>2 четверть</th><th>3 четверть</th><th>4 четверть</th></tr></thead><tbody id="tb"></tbody></table></div>
 <div class="mt" id="mt">Состояние на 25.11.2026 16:35:09<br>© Сетевой Город. Образование 5.59.3 (0.29.6)</div></div></div>
 </div>
-<div class="nav"><div class="ni" onclick="er()"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>Меню</div><div class="ni" onclick="er()"><svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Главная</div><div class="ni" onclick="er()"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Дневник</div><div class="ni" onclick="er()"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Расписание</div><div class="ni act"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>Отчеты</div><div class="ni" onclick="er()"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/></svg>Ещё</div></div>
-<div class="err" id="err"><div class="eb"><div style="color:#f87171;font-weight:700;font-size:14px;margin-bottom:6px">⚠️ Ошибка 503</div><div style="color:#cbd5e1;line-height:1.4;margin-bottom:12px">Сервер временно перегружен. Повторите попытку позже.</div><button class="btn b1" style="margin:0" onclick="document.getElementById('err').classList.remove('open')">Закрыть</button></div></div>
+<div id="tst"></div>
+<div class="nav"><div class="ni" onclick="nav()"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>Меню</div><div class="ni" onclick="nav()"><svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Главная</div><div class="ni" onclick="nav()"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Дневник</div><div class="ni" onclick="nav()"><svg viewBox="0 0 24 24"><path d="M3 4h18v18H3zM16 2v4M8 2v4M3 10h18"/></svg>Расписание</div><div class="ni act"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>Отчеты</div><div class="ni" onclick="nav()"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/></svg>Ещё</div></div>
 <script>
-const d="Алгебра:3|Английский язык.:4|Биология:4|Вероятность и статистика:4|География:4|Геометрия:4|Государственный (бурятский) язык РБ:5|Информатика и ИКТ:5|История России. Всеобщая история:4|Литература:3|Музыка:зач|Основы безопасности и защиты Родины:4|Русский язык:4|Труд (технология):5|Физика:4|Физкультура:4|Химия:3".split("|").map(s=>{const p=s.split(":");return{n:p.shift(),g:[p.pop(),"","","","","",""]};});
-let f='all',ed=0,c=0,t;
-function er(){document.getElementById('err').classList.add('open');}
+const raw="Алгебра:3|Английский язык.:4|Биология:4|Вероятность и статистика:4|География:4|Геометрия:4|Государственный (бурятский) язык РБ:5|Информатика и ИКТ:5|История России. Всеобщая история:4|Литература:3|Музыка:зач|Основы безопасности и защиты Родины:4|Русский язык:4|Труд (технология):5|Физика:4|Физкультура:4|Химия:3";
+let d=raw.split("|").map(s=>{const p=s.split(":");return{n:p.shift(),g:[p.pop(),"","","","","",""]};});
+try{const sv=localStorage.getItem('sg_grades');if(sv)d=JSON.parse(sv);}catch(e){}
+let f='all',ed=0,c=0,t,ld=0,tm;
+function bar(ms,cb){if(ld)return;ld=1;const p=document.getElementById('pb');p.style.transition='none';p.style.width='0';setTimeout(()=>{p.style.transition=`width ${ms}ms cubic-bezier(.1,.7,.1,1)`;p.style.width='88%';},20);setTimeout(()=>{p.style.transition='width .2s';p.style.width='100%';setTimeout(()=>{p.style.width='0';ld=0;cb();},200);},ms);}
+function msg(s){clearTimeout(tm);const e=document.getElementById('tst');e.textContent=s;e.classList.add('show');tm=setTimeout(()=>e.classList.remove('show'),2800);}
+function nav(){bar(600,()=>msg('Офлайн-режим: без сети доступен только сохранённый отчёт'));}
 function tap(){clearTimeout(t);if(++c===3){ed=!ed;document.body.classList.toggle('ed',ed);c=0;}t=setTimeout(()=>c=0,600);}
 function flt(g,e){f=g;document.querySelectorAll('.ch').forEach(b=>b.classList.remove('act'));e.classList.add('act');}
-function edit(i,j){if(!ed)return;const v=prompt('',d[i].g[j]);if(v!==null){d[i].g[j]=v.trim();draw();}}
+function edit(i,j){if(!ed)return;const v=prompt('',d[i].g[j]);if(v!==null){d[i].g[j]=v.trim();try{localStorage.setItem('sg_grades',JSON.stringify(d));}catch(e){}draw();}}
 function draw(){document.getElementById('tb').innerHTML=d.map((x,i)=>({x,i})).filter(o=>f==='all'||o.x.g.includes(f)).map((o,idx)=>`<tr><td>${idx+1}</td><td class="l">${o.x.n}</td>${o.x.g.map((v,j)=>`<td class="g" onclick="edit(${o.i},${j})">${v}</td>`).join('')}</tr>`).join('');}
-function build(){const b=document.getElementById('gen'),dc=document.getElementById('doc');b.textContent='⏳ Формирование...';dc.classList.add('load');setTimeout(()=>{draw();const n=new Date(),p=v=>String(v).padStart(2,'0');document.getElementById('mt').innerHTML=`Состояние на ${p(n.getDate())}.${p(n.getMonth()+1)}.${n.getFullYear()} ${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}<br>© Сетевой Город. Образование 5.59.3 (0.29.6)`;b.textContent='↻ Сформировать';dc.classList.remove('load');},350);}
+function build(){const b=document.getElementById('gen'),dc=document.getElementById('doc');if(ld)return;b.disabled=1;b.textContent='⏳ Формирование...';dc.classList.add('load');bar(2600,()=>{draw();const n=new Date(),p=v=>String(v).padStart(2,'0');document.getElementById('mt').innerHTML=`Состояние на ${p(n.getDate())}.${p(n.getMonth()+1)}.${n.getFullYear()} ${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}<br>© Сетевой Город. Образование 5.59.3 (0.29.6)`;b.textContent='↻ Сформировать';b.disabled=0;dc.classList.remove('load');});}
 draw();
 </script></body></html>
